@@ -90,9 +90,7 @@ describe("Automation Exercise", () => {
     contactUs.elements.uploadFile().selectFile("@image");
     contactUs.elements.submitBtn().click();
 
-    contactUs.elements
-      .successText()
-      .should("have.text", messages.message_sent);
+    contactUs.elements.successText().should("have.text", messages.message_sent);
 
     header.elements.homeBtn().click();
     cy.url().should("include", "/");
