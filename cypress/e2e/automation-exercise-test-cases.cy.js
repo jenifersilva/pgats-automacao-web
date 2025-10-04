@@ -69,17 +69,22 @@ describe("Automation Exercise", () => {
   it("Test Case 6: Contact Us Form", () => {
     headerPage.elements.contactUsBtn().click();
     cy.url().should("include", "/contact_us");
-    cy.contains('Get In Touch');
+    cy.contains("Get In Touch");
 
     contactUsPage.elements.nameInput().type(userData.name);
     contactUsPage.elements.emailInput().type(userData.email);
     contactUsPage.elements.subjectInput().type(userData.subject);
     contactUsPage.elements.messageInput().type(userData.message);
-    cy.fixture('example.json').as('file')
-    contactUsPage.elements.uploadFile().selectFile('@file')
+    cy.fixture("cypress-logo.png").as("image");
+    contactUsPage.elements.uploadFile().selectFile("@image");
     contactUsPage.elements.submitBtn().click();
 
-    cy.get(".status").should("have.text", "Success! Your details have been submitted successfully.");
+    contactUsPage.elements
+      .successText()
+      .should(
+        "have.text",
+        "Success! Your details have been submitted successfully."
+      );
 
     headerPage.elements.homeBtn().click();
     cy.url().should("include", "/");
