@@ -1,4 +1,6 @@
-# Projeto de Automação de Testes Web - PGATS
+# Automação de Testes na Camada de Interface (Web) - PGATS
+
+[![Cypress Tests and Report](https://github.com/jenifersilva/pgats-automacao-web/actions/workflows/ci-test.yml/badge.svg)](https://github.com/jenifersilva/pgats-automacao-web/actions/workflows/ci-test.yml)
 
 ## Visão Geral
 
@@ -14,7 +16,7 @@ pgats-automacao-web/
 │   ├── e2e/
 │   │   └── specs/                  # Arquivos de teste (.cy.js) organizados por funcionalidade
 │   ├── fixtures/                   # Massa de dados estática (ex: JSON com usuários)
-│   ├── page_objects/               # Classes que representam as páginas da aplicação (POM)
+│   ├── modules/                    # Módulos que representam as ações da aplicação (POM)
 │   └── support/                    # Comandos customizados (commands.js) e configurações
 │
 ├── cypress.config.js               # Arquivo de configuração principal do Cypress
@@ -25,7 +27,7 @@ pgats-automacao-web/
 ### Descrição das Pastas
 
 - **`e2e`**: Contém os arquivos de teste, também conhecidos como "specs". Cada arquivo deve testar uma funcionalidade ou jornada de usuário específica
-- **`page_objects`**: O coração da nossa arquitetura. Cada arquivo `.js` nesta pasta mapeia uma página ou componente da aplicação, centralizando os seletores de elementos e as ações que podem ser executadas. **Se a UI mudar, as alterações são feitas aqui.**
+- **`modules`**: O coração da nossa arquitetura. Cada arquivo `.js` centraliza os seletores de elementos e as ações que podem ser executadas. **Se a UI mudar, as alterações são feitas aqui.**
 - **`fixtures`**: Usado para armazenar dados de teste estáticos (massa de dados), como `user-data.json`. Estes dados podem ser carregados nos testes usando `cy.fixture()`.
 
 ## Pré-requisitos
@@ -35,6 +37,7 @@ pgats-automacao-web/
 ## Instalação
 
 1.  **Clone o repositório:**
+
     ```bash
     git clone https://github.com/jenifersilva/pgats-automacao-web.git
     cd pgats-automacao-web
@@ -42,6 +45,7 @@ pgats-automacao-web/
 
 2.  **Instale as dependências:**
     Este comando irá baixar o Cypress e todas as outras dependências listadas no `package.json`.
+
     ```bash
     npm install # ou npm i
     ```
@@ -69,3 +73,11 @@ Para executar em um navegador específico (ex: Chrome):
 ```bash
 npm run cy:run:chrome
 ```
+
+## Relatório de Testes
+
+Após cada alteração na branch `main`, um relatório de teste detalhado em HTML é gerado e publicado automaticamente via GitHub Pages.
+
+- **Acesse o último relatório de testes [aqui](https://jenifersilva.github.io/pgats-automacao-web/)**
+
+O relatório contém o resumo da execução, detalhes de cada teste e, em caso de falhas, screenshots e vídeos para facilitar a depuração.
