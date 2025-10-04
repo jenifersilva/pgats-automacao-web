@@ -66,7 +66,7 @@ describe("Automation Exercise", () => {
       .should("have.text", "Email Address already exist!");
   });
 
-  it.only("Test Case 6: Contact Us Form", () => {
+  it("Test Case 6: Contact Us Form", () => {
     headerPage.elements.contactUsBtn().click();
     cy.url().should("include", "/contact_us");
     cy.contains('Get In Touch');
@@ -78,7 +78,7 @@ describe("Automation Exercise", () => {
     cy.fixture('example.json').as('file')
     contactUsPage.elements.uploadFile().selectFile('@file')
     contactUsPage.elements.submitBtn().click();
-    
+
     cy.get(".status").should("have.text", "Success! Your details have been submitted successfully.");
 
     headerPage.elements.homeBtn().click();
