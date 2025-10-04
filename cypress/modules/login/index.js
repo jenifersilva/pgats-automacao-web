@@ -1,3 +1,6 @@
+import titles from "../../fixtures/titles.json";
+import messages from "../../fixtures/messages.json";
+
 class Login {
   elements = {
     // Signup Form
@@ -13,6 +16,11 @@ class Login {
     loginErrorText: () => cy.get(".login-form > form > p"),
   };
 
+  checkLoginTitles() {
+    cy.contains(titles.login);
+    cy.contains(titles.signup);
+  }
+
   startSignup(name, email) {
     this.elements.signupNameInput().type(name);
     this.elements.signupEmailInput().type(email);
@@ -23,6 +31,18 @@ class Login {
     this.elements.loginEmailInput().type(email);
     this.elements.loginPasswordInput().type(password);
     this.elements.loginButton().click();
+  }
+
+  checkLoginErrorMessage() {
+    this.elements
+      .loginErrorText()
+      .should("have.text", messages.incorrect_email_password);
+  }
+
+  checkSignupErrorMessage() {
+    this.elements
+      .signupErrorText()
+      .should("have.text", messages.email_already_exists);
   }
 }
 

@@ -1,4 +1,6 @@
 import { faker } from "@faker-js/faker";
+import titles from "../../fixtures/titles.json";
+import messages from "../../fixtures/messages.json";
 
 class Signup {
   elements = {
@@ -21,9 +23,15 @@ class Signup {
     zipcodeInput: () => cy.get("#zipcode"),
     mobileNumberInput: () => cy.get("#mobile_number"),
     createAccountButton: () => cy.get("button[data-qa=create-account]"),
+    accountCreatedHeader: () => cy.get("h2[data-qa=account-created]"),
+    continueBtn: () => cy.get('[data-qa="continue-button"]'),
   };
 
-  fillAccountInformation(password, userDetails) {
+  checkSignUpTitle() {
+    this.elements.title().should("have.text", titles.enter_account_information);
+  }
+
+  fillAccountInformation(password, firstName, lastName) {
     this.elements.genderMrRadio().check();
     this.elements.passwordInput().type(password, { log: false });
     this.elements.daysDropdown().select("20");
@@ -31,8 +39,8 @@ class Signup {
     this.elements.yearsDropdown().select("1990");
     this.elements.newsletterCheckbox().check();
     this.elements.optinCheckbox().check();
-    this.elements.firstNameInput().type(userDetails.firstName);
-    this.elements.lastNameInput().type(userDetails.lastName);
+    this.elements.firstNameInput().type(firstName);
+    this.elements.lastNameInput().type(lastName);
     this.elements.companyInput().type(faker.company.name());
     this.elements.address1Input().type(faker.location.streetAddress());
     this.elements.address2Input().type("Test");
@@ -42,6 +50,20 @@ class Signup {
     this.elements.zipcodeInput().type(faker.location.zipCode());
     this.elements.mobileNumberInput().type(faker.phone.number());
     this.elements.createAccountButton().click();
+  }
+
+  checkSignUpTitle() {
+    cy.contains(titles.enter_account_information);
+  }
+
+  checkAccountCreated() {
+    this.elements
+      .accountCreatedHeader()
+      .should("have.text", messages.account_created);
+  }
+
+  clickContinueButton() {
+    this.elements.continueBtn().click();
   }
 }
 
