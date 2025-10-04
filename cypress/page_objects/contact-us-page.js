@@ -6,7 +6,7 @@ class ContactUsPage {
     messageInput: () => cy.get('textarea[data-qa="message"]'),
     uploadFile: () => cy.get('input[name="upload_file"]'),
     submitBtn: () => cy.get('input[data-qa="submit-button"]'),
-    successText: () => cy.get('.status'),
+    successText: () => cy.get(".status"),
   };
 }
 export default new ContactUsPage();

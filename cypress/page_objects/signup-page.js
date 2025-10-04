@@ -1,3 +1,5 @@
+import { faker } from "@faker-js/faker";
+
 class SignupPage {
   elements = {
     title: () => cy.get(":nth-child(1) > b"),
@@ -25,20 +27,20 @@ class SignupPage {
     this.elements.genderMrRadio().check();
     this.elements.passwordInput().type(password, { log: false });
     this.elements.daysDropdown().select("20");
-    this.elements.monthsDropdown().select("December");
+    this.elements.monthsDropdown().select(faker.date.month());
     this.elements.yearsDropdown().select("1990");
     this.elements.newsletterCheckbox().check();
     this.elements.optinCheckbox().check();
     this.elements.firstNameInput().type(userDetails.firstName);
     this.elements.lastNameInput().type(userDetails.lastName);
-    this.elements.companyInput().type("QA");
-    this.elements.address1Input().type("Rua Teste");
-    this.elements.address2Input().type("Bairro Teste");
+    this.elements.companyInput().type(faker.company.name());
+    this.elements.address1Input().type(faker.location.streetAddress());
+    this.elements.address2Input().type("Test");
     this.elements.countryDropdown().select("United States");
-    this.elements.stateInput().type("Teste");
-    this.elements.cityInput().type("Teste");
-    this.elements.zipcodeInput().type("12345");
-    this.elements.mobileNumberInput().type("123456789");
+    this.elements.stateInput().type(faker.location.state());
+    this.elements.cityInput().type(faker.location.city());
+    this.elements.zipcodeInput().type(faker.location.zipCode());
+    this.elements.mobileNumberInput().type(faker.phone.number());
     this.elements.createAccountButton().click();
   }
 }
