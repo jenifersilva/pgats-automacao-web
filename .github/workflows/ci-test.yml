@@ -41,6 +41,9 @@ jobs:
           retention-days: 7
 
   deploy-report:
+    environment:
+      name: github-pages
+
     needs: cypress-run
     runs-on: ubuntu-latest
     steps:
