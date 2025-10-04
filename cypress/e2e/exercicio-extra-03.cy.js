@@ -5,6 +5,7 @@
   Entregar somente o arquivo de spec
   Vale 1pt. Extra; Enviar apenas a spec via formulário.
 */
+require("cypress-xpath");
 
 describe("Automation Exercise", () => {
   const userData = {
@@ -76,9 +77,9 @@ describe("Automation Exercise", () => {
       "Account Created!"
     );
     cy.xpath("//a[@data-qa='continue-button']").click();
-    cy.xpath(`//a[contains(text(), 'Logged in as')]`).xpath(
-      `//b[contains(text(), '${userData.name}')]`
-    );
+    cy.xpath(`//a[contains(text(), 'Logged in as')]`)
+      .xpath(`//b[contains(text(), '${userData.name}')]`)
+      .should("exist");
 
     cy.xpath("//a[@href='/delete_account']").click();
     cy.xpath("//h2[@data-qa='account-deleted']/b").should(
@@ -89,9 +90,9 @@ describe("Automation Exercise", () => {
 
   it("Test Case 2: Login User with correct email and password", () => {
     loginUser(userData.email, userData.password);
-    cy.xpath(`//a[contains(text(), 'Logged in as')]`).xpath(
-      `//b[contains(text(), '${userData.name}')]`
-    );
+    cy.xpath(`//a[contains(text(), 'Logged in as')]`)
+      .xpath(`//b[contains(text(), '${userData.name}')]`)
+      .should("exist");
   });
 
   it("Test Case 3: Login User with incorrect email and password", () => {
@@ -106,9 +107,9 @@ describe("Automation Exercise", () => {
   it("Test Case 4: Logout User", () => {
     loginUser(userData.email, userData.password);
 
-    cy.xpath(`//a[contains(text(), 'Logged in as')]`).xpath(
-      `//b[contains(text(), '${userData.name}')]`
-    );
+    cy.xpath(`//a[contains(text(), 'Logged in as')]`)
+      .xpath(`//b[contains(text(), '${userData.name}')]`)
+      .should("exist");
     cy.xpath("//a[@href='/logout']").click();
 
     cy.xpath("//a[@href='/login']").should("be.visible");
