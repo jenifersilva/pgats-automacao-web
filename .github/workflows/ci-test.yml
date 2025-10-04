@@ -43,11 +43,13 @@ jobs:
         uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with:
-          name: cypress-report
-          path: cypress/reports/html/index.html
-          compression-level: 0 # no compression
+          name: Tests report - Zip file
+          path: cypress/reports/html
 
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - name: Publish GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          artifact_name: cypress-report
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: cypress/reports/html
+          destination_dir: e2e
+          publish_branch: gh-pages
