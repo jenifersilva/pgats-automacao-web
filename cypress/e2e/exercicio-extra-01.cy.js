@@ -1,4 +1,11 @@
-describe.skip("Cadastrar entradas e saídas com bugs", () => {
+/*
+  Hands-on
+  Analise os testes criados para uma aplicação e que estão com falhas diversas, de sintaxe, funcionalidade, seletores. Execute, Identifique a origem do erro e corrija os testes falhando.
+  Link: https://gist.github.com/samlucax/0df852881249b561cdf8888493b03125
+  (não vale nota, mas, é importante para fixar)
+*/
+
+describe("Cadastrar entradas e saídas com bugs", () => {
   it("Cadastrar uma nova transação de entrada - falha 1", () => {
     cy.visit("https://devfinance-agilizei.netlify.app");
 
