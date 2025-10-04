@@ -1,10 +1,12 @@
-# Projeto de Automação de Testes - PGATS Web
+# Projeto de Automação de Testes Web - PGATS
 
-Este repositório contém os testes automatizados de ponta a ponta (E2E) para a aplicação PGATS, utilizando Cypress.
+## Visão Geral
+
+Este repositório contém a suíte de testes automatizados de ponta a ponta (E2E) para o site [Automation Exercise](https://www.automationexercise.com/), desenvolvida com Cypress.
 
 ## Estrutura do Projeto
 
-O projeto segue as melhores práticas da comunidade Cypress, utilizando o padrão **Page Object Model (POM)** para garantir que os testes sejam legíveis, reutilizáveis e fáceis de manter.
+O projeto adota as melhores práticas da comunidade Cypress, incluindo o padrão **Page Object Model (POM)**, para garantir que os testes sejam legíveis, reutilizáveis e fáceis de manter.
 
 ```
 pgats-automacao-web/
@@ -22,13 +24,13 @@ pgats-automacao-web/
 
 ### Descrição das Pastas
 
--   **`e2e`**: Contém os arquivos de teste, também conhecidos como "specs". Cada arquivo deve testar uma funcionalidade ou jornada de usuário específica
--   **`page_objects`**: O coração da nossa arquitetura. Cada arquivo `.js` nesta pasta mapeia uma página ou componente da aplicação, centralizando os seletores de elementos e as ações que podem ser executadas. **Se a UI mudar, as alterações são feitas aqui.**
--   **`fixtures`**: Usado para armazenar dados de teste estáticos (massa de dados), como `user-data.json`. Estes dados podem ser carregados nos testes usando `cy.fixture()`.
+- **`e2e`**: Contém os arquivos de teste, também conhecidos como "specs". Cada arquivo deve testar uma funcionalidade ou jornada de usuário específica
+- **`page_objects`**: O coração da nossa arquitetura. Cada arquivo `.js` nesta pasta mapeia uma página ou componente da aplicação, centralizando os seletores de elementos e as ações que podem ser executadas. **Se a UI mudar, as alterações são feitas aqui.**
+- **`fixtures`**: Usado para armazenar dados de teste estáticos (massa de dados), como `user-data.json`. Estes dados podem ser carregados nos testes usando `cy.fixture()`.
 
 ## Pré-requisitos
 
--   npm (geralmente instalado com o Node.js)
+- npm (geralmente instalado com o Node.js)
 
 ## Instalação
 
