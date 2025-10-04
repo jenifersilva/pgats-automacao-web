@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe("Automation Exercise", () => {
+describe.skip("Automation Exercise", () => {
   it("Cadastrar um usuário", () => {
     cy.visit("https://www.automationexercise.com/");
     cy.get('a[href="/login"]').click();

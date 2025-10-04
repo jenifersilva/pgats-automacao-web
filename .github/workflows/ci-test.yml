@@ -38,14 +38,18 @@ jobs:
         with:
           name: cypress-report
           path: cypress/reports/html
-          retention-days: 7
 
   deploy-report:
+    needs: cypress-run
+    runs-on: ubuntu-latest
+
     environment:
       name: github-pages
 
-    needs: cypress-run
-    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
