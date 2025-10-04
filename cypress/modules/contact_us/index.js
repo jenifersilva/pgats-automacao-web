@@ -1,4 +1,4 @@
-class ContactUsPage {
+class ContactUs {
   elements = {
     nameInput: () => cy.get('input[data-qa="name"]'),
     emailInput: () => cy.get('input[data-qa="email"]'),
@@ -9,4 +9,4 @@ class ContactUsPage {
     successText: () => cy.get(".status"),
   };
 }
-export default new ContactUsPage();
+export default new ContactUs();

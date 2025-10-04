@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 
-class SignupPage {
+class Signup {
   elements = {
     title: () => cy.get(":nth-child(1) > b"),
     genderMrRadio: () => cy.get("#id_gender1"),
@@ -45,4 +45,4 @@ class SignupPage {
   }
 }
 
-export default new SignupPage();
+export default new Signup();

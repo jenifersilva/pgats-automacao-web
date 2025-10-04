@@ -1,4 +1,4 @@
-class HeaderPage {
+class Header {
   elements = {
     loginBtn: () => cy.get('a[href="/login"]'),
     loggedInAsText: (username) => cy.contains(`Logged in as ${username}`),
@@ -9,4 +9,4 @@ class HeaderPage {
   };
 }
 
-export default new HeaderPage();
+export default new Header();

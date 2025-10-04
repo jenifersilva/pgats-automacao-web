@@ -1,4 +1,4 @@
-class LoginPage {
+class Login {
   elements = {
     // Signup Form
     signupNameInput: () => cy.get('input[data-qa="signup-name"]'),
@@ -26,4 +26,4 @@ class LoginPage {
   }
 }
 
-export default new LoginPage();
+export default new Login();
