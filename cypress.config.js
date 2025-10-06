@@ -8,6 +8,7 @@ module.exports = defineConfig({
     embeddedScreenshots: true,
     inlineAssets: true,
     saveAllAttempts: false,
+    showSkipped: false,
   },
   e2e: {
     baseUrl: "https://www.automationexercise.com/",

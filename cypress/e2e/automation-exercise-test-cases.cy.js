@@ -13,7 +13,7 @@ import checkout from "../modules/checkout";
 import { getRandomEmail } from "../support/helpers";
 import { faker } from "@faker-js/faker";
 
-describe.only("Automation Exercise", () => {
+describe("Automation Exercise", () => {
   beforeEach(() => {
     cy.visit("/");
   });

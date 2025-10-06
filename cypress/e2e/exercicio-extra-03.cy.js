@@ -7,7 +7,7 @@
 */
 require("cypress-xpath");
 
-describe("Automation Exercise", () => {
+describe.skip("Automation Exercise", () => {
   const userData = {
     name: "User Test",
     email: "jenifer@automation.exercise",

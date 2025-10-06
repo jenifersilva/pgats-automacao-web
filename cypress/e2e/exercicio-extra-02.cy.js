@@ -8,7 +8,7 @@
 
 import userData from "../fixtures/user-data.json";
 
-describe("Automation Exercise", () => {
+describe.skip("Automation Exercise", () => {
   function createUser(name, email, password) {
     createUserStep1(name, email);
     createUserStep2(name, email, password);

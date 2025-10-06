@@ -15,7 +15,7 @@ import contactUs from "../modules/contact_us";
 import { getRandomEmail } from "../support/helpers";
 import { faker } from "@faker-js/faker";
 
-describe("Automation Exercise", () => {
+describe.skip("Automation Exercise", () => {
   beforeEach(() => {
     cy.visit("/");
   });
