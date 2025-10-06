@@ -1,4 +1,4 @@
-import messages from "../../fixtures/messages.json";
+import titles from "../../fixtures/titles.json";
 
 class AccountDeleted {
   elements = {
@@ -9,7 +9,7 @@ class AccountDeleted {
   checkAccountDeletedTitle() {
     this.elements
       .accountDeletedHeader()
-      .should("have.text", messages.account_deleted);
+      .should("have.text", titles.account_deleted);
   }
 }
 export default new AccountDeleted();

@@ -1,6 +1,5 @@
 import { faker } from "@faker-js/faker";
 import titles from "../../fixtures/titles.json";
-import messages from "../../fixtures/messages.json";
 
 class Signup {
   elements = {
@@ -59,7 +58,7 @@ class Signup {
   checkAccountCreated() {
     this.elements
       .accountCreatedHeader()
-      .should("have.text", messages.account_created);
+      .should("have.text", titles.account_created);
   }
 
   clickContinueButton() {
