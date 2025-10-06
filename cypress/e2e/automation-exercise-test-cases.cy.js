@@ -391,7 +391,7 @@ describe("Automation Exercise - Modularizarion", () => {
       "Your total purchase amount is"
     );
 
-    checkout.elements.continueCheckoutBtn.click();
+    checkout.elements.continueCheckoutBtn().click();
 
     header.deleteAccount();
     accountDeleted.checkAccountDeletedTitle();
