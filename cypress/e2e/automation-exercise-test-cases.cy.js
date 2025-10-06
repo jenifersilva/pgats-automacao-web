@@ -327,7 +327,7 @@ describe("Automation Exercise - Modularizarion", () => {
     products.addProductToCartFromList(0);
     products.closeCartModal();
     products.addProductToCartFromList(1);
-    header.goToCart();
+    products.goToCart();
     checkout.checkBagItems(2);
     checkout.goToCheckout();
 
