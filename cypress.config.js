@@ -9,6 +9,7 @@ module.exports = defineConfig({
     inlineAssets: true,
     saveAllAttempts: false,
     showSkipped: false,
+    showPending: false,
   },
   e2e: {
     baseUrl: "https://www.automationexercise.com/",
