@@ -31,24 +31,42 @@ class Signup {
   }
 
   fillAccountInformation(password, firstName, lastName) {
+    let account_information = {
+      password: password,
+      firstName: firstName,
+      lastName: lastName,
+      company: faker.company.name(),
+      address1: faker.location.streetAddress(),
+      address2: "Test",
+      country: "United States",
+      state: faker.location.state(),
+      city: faker.location.city(),
+      zipCode: faker.location.zipCode(),
+      mobileNumber: faker.phone.number(),
+    };
+
     this.elements.genderMrRadio().check();
-    this.elements.passwordInput().type(password, { log: false });
+    this.elements
+      .passwordInput()
+      .type(account_information.password, { log: false });
     this.elements.daysDropdown().select("20");
     this.elements.monthsDropdown().select(faker.date.month());
     this.elements.yearsDropdown().select("1990");
     this.elements.newsletterCheckbox().check();
     this.elements.optinCheckbox().check();
-    this.elements.firstNameInput().type(firstName);
-    this.elements.lastNameInput().type(lastName);
-    this.elements.companyInput().type(faker.company.name());
-    this.elements.address1Input().type(faker.location.streetAddress());
-    this.elements.address2Input().type("Test");
-    this.elements.countryDropdown().select("United States");
-    this.elements.stateInput().type(faker.location.state());
-    this.elements.cityInput().type(faker.location.city());
-    this.elements.zipcodeInput().type(faker.location.zipCode());
-    this.elements.mobileNumberInput().type(faker.phone.number());
+    this.elements.firstNameInput().type(account_information.firstName);
+    this.elements.lastNameInput().type(account_information.lastName);
+    this.elements.companyInput().type(account_information.company);
+    this.elements.address1Input().type(account_information.address1);
+    this.elements.address2Input().type(account_information.address2);
+    this.elements.countryDropdown().select(account_information.country);
+    this.elements.stateInput().type(account_information.state);
+    this.elements.cityInput().type(account_information.city);
+    this.elements.zipcodeInput().type(account_information.zipCode);
+    this.elements.mobileNumberInput().type(account_information.mobileNumber);
     this.elements.createAccountButton().click();
+
+    return account_information;
   }
 
   checkSignUpTitle() {

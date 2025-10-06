@@ -7,6 +7,8 @@ class Footer {
     subscriptionForm: () => cy.get(".searchform"),
     subscriptionInput: () => cy.get("input[id='susbscribe_email']"),
     submitBtn: () => cy.get("button[id='subscribe']"),
+    scrollUpButton: () => cy.get("#scrollUp"),
+    pageHeader: () => cy.contains(titles.full_fledged),
   };
 
   goToSubscriptionForm() {
@@ -18,6 +20,20 @@ class Footer {
     this.elements.subscriptionInput().type(email);
     this.elements.submitBtn().click();
     cy.contains(messages.subscription_submitted);
+  }
+
+  scrollToTop() {
+    cy.scrollTo("top");
+    this.checkHeaderVisibility();
+  }
+
+  clickScrollUpButton() {
+    this.elements.scrollUpButton().click();
+    this.checkHeaderVisibility();
+  }
+
+  checkHeaderVisibility() {
+    this.elements.pageHeader().should("be.visible");
   }
 }
 

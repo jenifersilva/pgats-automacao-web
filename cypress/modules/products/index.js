@@ -20,6 +20,20 @@ class Products {
     productAvailabilityLbl: () => cy.get(".product-information > p").eq(1),
     productConditionLbl: () => cy.get(".product-information > p").eq(2),
     productBrandLbl: () => cy.get(".product-information > p").eq(3),
+    brandsSection: () => cy.get(".brands_products"),
+    brandsList: () => cy.get(".brands-name"),
+    reviewTab: () => cy.get("a[href='#reviews']"),
+    reviewNameInput: () => cy.get("#name"),
+    reviewEmailInput: () => cy.get("#email"),
+    reviewTextArea: () => cy.get("#review"),
+    reviewSubmitBtn: () => cy.get("#button-review"),
+    recommendedItemsSection: () => cy.get(".recommended_items > .title"),
+    recommendedItemsCarousel: () =>
+      cy.get("#recommended-item-carousel > .carousel-inner > .active"),
+    recommendedAddToCartBtn: () =>
+      cy.get(
+        "#recommended-item-carousel > .carousel-inner > .active .add-to-cart"
+      ),
   };
 
   checkAllProductsTitle() {
@@ -84,6 +98,41 @@ class Products {
 
   addProductToCartFromDetails() {
     this.elements.addToCartDetailsBtn().click();
+  }
+
+  checkBrandsVisibility() {
+    this.elements.brandsSection().should("be.visible");
+  }
+
+  clickOnBrand(brandName) {
+    this.elements.brandsList().contains(brandName).click();
+  }
+
+  checkReviewFormVisibility() {
+    this.elements.reviewTab().should("have.text", "Write Your Review");
+  }
+
+  submitReview(name, email, review) {
+    this.elements.reviewNameInput().type(name);
+    this.elements.reviewEmailInput().type(email);
+    this.elements.reviewTextArea().type(review);
+    this.elements.reviewSubmitBtn().click();
+  }
+
+  checkReviewSuccessMessage() {
+    cy.contains("div", "Thank you for your review.").should("be.visible");
+  }
+
+  checkRecommendedItemsVisibility() {
+    this.elements
+      .recommendedItemsSection()
+      .scrollIntoView()
+      .should("be.visible")
+      .should("have.text", "recommended items");
+  }
+
+  addRecommendedItemToCart(index) {
+    this.elements.recommendedAddToCartBtn().eq(index).click();
   }
 }
 export default new Products();

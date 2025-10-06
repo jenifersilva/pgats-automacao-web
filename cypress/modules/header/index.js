@@ -3,7 +3,7 @@ class Header {
     homeBtn: () => cy.get(".fa-home"),
     productsBtn: () => cy.get("a[href='/products']"),
     cartBtn: () => cy.get("a[href='/view_cart']").first(),
-    loginBtn: () => cy.get('a[href="/login"]'),
+    loginBtn: () => cy.get('li > a[href="/login"]'),
     logoutBtn: () => cy.get("a[href='/logout']"),
     testCasesBtn: () => cy.get("a[href='/test_cases']"),
     deleteAccountBtn: () => cy.get('a[href="/delete_account"]'),
