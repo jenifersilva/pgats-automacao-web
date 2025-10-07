@@ -3,5 +3,6 @@
   "email": "jenifer@automation.exercise",
   "password": "12345",
   "subject": "Subject test",
-  "message": "Message test"
+  "message": "Message test",
+  "product_review": "Product review test"
 }

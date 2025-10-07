@@ -1,5 +1,5 @@
-import titles from "../../fixtures/titles.json";
-import messages from "../../fixtures/messages.json";
+import titles from '../../fixtures/titles.json';
+import messages from '../../fixtures/messages.json';
 
 class ContactUs {
   elements = {
@@ -9,7 +9,7 @@ class ContactUs {
     messageInput: () => cy.get('textarea[data-qa="message"]'),
     uploadFile: () => cy.get('input[name="upload_file"]'),
     submitBtn: () => cy.get('input[data-qa="submit-button"]'),
-    successText: () => cy.get(".status"),
+    successText: () => cy.get('.status'),
   };
 
   checkContactUsTitle() {
@@ -21,13 +21,13 @@ class ContactUs {
     this.elements.emailInput().type(email);
     this.elements.subjectInput().type(subject);
     this.elements.messageInput().type(message);
-    cy.fixture("cypress-logo.png").as("image");
-    this.elements.uploadFile().selectFile("@image");
+    cy.fixture('cypress-logo.png').as('image');
+    this.elements.uploadFile().selectFile('@image');
     this.elements.submitBtn().click();
   }
 
   checkSuccessMessage() {
-    this.elements.successText().should("have.text", messages.message_sent);
+    this.elements.successText().should('have.text', messages.message_sent);
   }
 }
 export default new ContactUs();

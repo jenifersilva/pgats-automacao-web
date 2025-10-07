@@ -6,7 +6,11 @@
   "scripts": {
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:run:chrome": "cypress run --browser chrome"
+    "cy:run:chrome": "cypress run --browser chrome",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "format": "prettier --write \"**/*.{js,json,md}\"",
+    "test:ci": "npm run lint && npm run cy:run"
   },
   "keywords": [],
   "author": "",
@@ -14,9 +18,12 @@
   "type": "commonjs",
   "devDependencies": {
     "@faker-js/faker": "^10.0.0",
-    "@types/cypress": "^1.1.6",
     "cypress": "^15.3.0",
     "cypress-mochawesome-reporter": "^3.8.2",
-    "cypress-xpath": "^2.0.1"
+    "cypress-xpath": "^2.0.1",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-cypress": "^2.13.0",
+    "prettier": "^2.8.0"
   }
 }

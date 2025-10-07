@@ -1,6 +1,6 @@
 class Header {
   elements = {
-    homeBtn: () => cy.get(".fa-home"),
+    homeBtn: () => cy.get('.fa-home'),
     productsBtn: () => cy.get("a[href='/products']"),
     cartBtn: () => cy.get("a[href='/view_cart']").first(),
     loginBtn: () => cy.get('li > a[href="/login"]'),
@@ -44,7 +44,7 @@ class Header {
   }
 
   checkLoggedInText(username) {
-    this.elements.loggedInAsText(username).should("be.visible");
+    this.elements.loggedInAsText(username).should('be.visible');
   }
 }
 

@@ -1,13 +1,13 @@
 class Categories {
   elements = {
-    categoriesArea: () => cy.get(".category-products"),
+    categoriesArea: () => cy.get('.category-products'),
     womenCategory: () => cy.get("a[href='#Women']"),
     menCategory: () => cy.get("a[href='#Men']"),
-    categoryTitle: () => cy.get(".features_items h2.title"),
+    categoryTitle: () => cy.get('.features_items h2.title'),
   };
 
   checkCategoriesVisibility() {
-    this.elements.categoriesArea().should("be.visible");
+    this.elements.categoriesArea().should('be.visible');
   }
 
   clickOnWomenCategory() {
@@ -23,7 +23,7 @@ class Categories {
   }
 
   checkCategoryTitle(title) {
-    this.elements.categoryTitle().should("have.text", title);
+    this.elements.categoryTitle().should('have.text', title);
   }
 }
 
