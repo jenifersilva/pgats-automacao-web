@@ -74,6 +74,12 @@ Para executar em um navegador específico (ex: Chrome):
 npm run cy:run:chrome
 ```
 
+### Execução no Browserstack
+
+```bash
+browserstack-cypress run --sync
+```
+
 ## Relatório de Testes
 
 Após cada alteração na branch `main`, um relatório de teste detalhado em HTML é gerado e publicado automaticamente via GitHub Pages.

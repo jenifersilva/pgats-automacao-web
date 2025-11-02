@@ -1,20 +1,20 @@
 {
   "auth": {
-    "username": "",
-    "access_key": ""
+    "username": "jenifersilva_ty3QgP",
+    "access_key": "rTozoh95XPcqPkVHtpLV"
   },
   "browsers": [
     {
       "browser": "chrome",
       "os": "Windows 10",
-      "versions": ["latest"]
+      "versions": ["latest", "latest-1"]
     }
   ],
   "run_settings": {
     "cypress_config_file": "./cypress.config.js",
-    "cypress_version": "13.latest",
+    "cypress_version": "14.latest",
     "project_name": "pgats-automacao-web",
-    "build_name": "build-name",
+    "build_name": "E2E tests",
     "exclude": [],
     "parallels": 1,
     "npm_dependencies": {
