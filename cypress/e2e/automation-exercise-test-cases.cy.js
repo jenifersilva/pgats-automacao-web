@@ -211,7 +211,7 @@ describe('Automation Exercise - Modularizarion', () => {
     accountDeleted.checkAccountDeletedTitle();
   });
 
-  it.only('Test Case 16: Place Order: Login before Checkout', () => {
+  it('Test Case 16: Place Order: Login before Checkout', () => {
     header.goToLogin();
 
     login.checkLoginTitles();

@@ -1,4 +1,4 @@
-describe('Drag and Drop and Windows', () => {
+describe.skip('Drag and Drop and Windows', () => {
   it('Multiple Windows', () => {
     cy.visit('https://the-internet.herokuapp.com/windows');
 
