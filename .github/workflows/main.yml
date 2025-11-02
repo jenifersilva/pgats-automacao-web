@@ -1,5 +1,4 @@
-# Nome do Workflow
-name: Cypress Tests and Report
+name: Web E2E Tests and Report
 
 on:
   push:
@@ -19,10 +18,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
+      - name: Node version
+        run: node --version
 
       - name: Install dependencies
         run: npm install
@@ -32,10 +29,14 @@ jobs:
 
       - name: Upload report artifact
         uses: actions/upload-artifact@v4
-        if: ${{ always() }}
+        if: ${{ !cancelled() }}
         with:
           name: Tests report - Zip file
-          path: cypress/reports/html
+          path: |
+            cypress/reports
+            cypress/screenshots
+            cypress/videos
+      
 
       - name: Publish GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

@@ -1,6 +1,12 @@
 node_modules/
-downloads/
-screenshots/
+cypress/downloads/
+cypress/screenshots
+cypress/videos
+cypress/reports
 cypress/.DS_Store
-reports/
+cypress/reports/
 .DS_Store
+package-lock.json
+results
+log
+npm_install_debug.log
