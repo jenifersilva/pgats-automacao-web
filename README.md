@@ -1,6 +1,6 @@
 # Automação de Testes na Camada de Interface (Web) - PGATS
 
-[![Cypress Tests and Report](https://github.com/jenifersilva/pgats-automacao-web/actions/workflows/ci-test.yml/badge.svg)](https://github.com/jenifersilva/pgats-automacao-web/actions/workflows/ci-test.yml)
+[![Cypress Tests and Report](https://github.com/jenifersilva/pgats-automacao-web/actions/workflows/main.yml/badge.svg)](https://github.com/jenifersilva/pgats-automacao-web/actions/workflows/main.yml)
 
 ## Visão Geral
 
